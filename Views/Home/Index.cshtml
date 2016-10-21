@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Home</title>
+    <!--CSS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/materialize-v0.97.5/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+<body onload="nobackbutton()">
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="userView">
+                <!--<img class="background" src="images/office.jpg">-->
+                <a href="#!user"> <!--<img class="circle" src="images/yuna.jpg">--></a>
+                <a href="#!name"><span class="white-text name">John Doe</span></a>
+                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+        
+    <div class="container">
+        <h1 data-activates="slide-out" class="button-collapse" >Employee</h1>
+
+        <div id="listEmployee">
+            <table class="highlight responsive-table">
+                <thead>
+                    <tr>
+                        
+                        <th data-field="idRole">ID Role</th>
+                        <th data-field="idBranchOffice">ID Branch Office</th>
+                        <th data-field="document">Document</th>
+                        <th data-field="name">Name</th>
+                        <th data-field="surname">Surname</th>
+                        <th data-field="phone">Phone</th>
+                        <th data-field="phone2">Phone2</th>
+                        <th data-field="cellPhone">Cell phone</th>
+                        <th data-field="cellPhone2">cellPhone2</th>
+                        <th data-field="email">Email</th>
+                        <th data-field="email2">Email2</th>
+
+                    </tr>
+                </thead>
+
+                <tbody class="tbody"></tbody>
+            </table>
+            <a href="/Login/Index">Link</a>
+        </div>
+
+    </div>
+
+    <!--  Scripts-->
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Content/materialize-v0.97.5/js/materialize.js"></script>
+    <script src="~/Scripts/jsProject/Functions.js"></script>
+
+   
+
+</body>
+</html>
