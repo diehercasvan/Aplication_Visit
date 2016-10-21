@@ -50,13 +50,7 @@ function redirection() {
     sessionStorage.removeItem("dataUser");
     window.location.assign("/Login/Index");
 }
-//Function Get data user 
-function loadDataUser(dataUser) {
 
-    var dataUserObject = JSON.parse(dataUser);
-    console.log(dataUserObject);
-   
-}
 //Function no back button 
 
 function nobackbutton() {

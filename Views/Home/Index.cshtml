@@ -15,60 +15,130 @@
     <link href="~/Content/materialize-v0.97.5/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
 </head>
+
+
 <body onload="nobackbutton()">
+    <!--nav bar -->
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#!" class="brand-logo">  <i class="material-icons">cloud</i> </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" data-activates="slide-out" class="button-collapseUser"><i class="material-icons">person_pin</i></a></li>
+                <li><a href="mobile.html"><i class="material-icons">info_outline</i></a></li>
+               
+
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+
+                <li><a href="#" data-activates="slide-out" class="button-collapseUser">Perfil</a></li>
+                <li><a href="#">Información</a></li>
+
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <!--nav bar slider -->
+
     <ul id="slide-out" class="side-nav">
         <li>
             <div class="userView">
-                <!--<img class="background" src="images/office.jpg">-->
-                <a href="#!user"> <!--<img class="circle" src="images/yuna.jpg">--></a>
-                <a href="#!name"><span class="white-text name">John Doe</span></a>
-                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                <img class="background responsive-img" src="~/Img/logoSinapsis.png">
+                <a href="#!user"><img class="circle" src="~/Img/foro_diego.png"></a>
+                <a href="#!name"><span class="black-text name" id="nameUser">John Doe</span></a>
+                <a href="#!email"><span class="black-text email"id="emailUser">jdandturk@gmail.com</span></a>
+                <a href="#!email"><span class="black-text " id="role">jdandturk@gmail.com</span></a>
             </div>
         </li>
-        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-        <li><a href="#!">Second Link</a></li>
         <li><div class="divider"></div></li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><a href="#" id="phoneUser"></a></li>
+        <li><a href="#" id="phoneUser2"></a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="#" id="celUser"></a></li>
+        <li><a href="#" id="celUser2"></a></li>
+        <li><div class="divider"></div></li>
+
     </ul>
-        
+
+
+
     <div class="container">
-        <h1 data-activates="slide-out" class="button-collapse" >Employee</h1>
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="large material-icons">flash_on</i>
+                        </h2>
+                        <h5 class="center">Empresa</h5>
 
-        <div id="listEmployee">
-            <table class="highlight responsive-table">
-                <thead>
-                    <tr>
-                        
-                        <th data-field="idRole">ID Role</th>
-                        <th data-field="idBranchOffice">ID Branch Office</th>
-                        <th data-field="document">Document</th>
-                        <th data-field="name">Name</th>
-                        <th data-field="surname">Surname</th>
-                        <th data-field="phone">Phone</th>
-                        <th data-field="phone2">Phone2</th>
-                        <th data-field="cellPhone">Cell phone</th>
-                        <th data-field="cellPhone2">cellPhone2</th>
-                        <th data-field="email">Email</th>
-                        <th data-field="email2">Email2</th>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="large material-icons">group</i>
+                        </h2>
+                        <h5 class="center">Cliente</h5>
 
-                    </tr>
-                </thead>
+                    </div>
+                </div>
+                <div class="col s12 m4">
 
-                <tbody class="tbody"></tbody>
-            </table>
-            <a href="/Login/Index">Link</a>
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="large material-icons">settings</i>
+                        </h2>
+                        <h5 class="center">Empleado</h5>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="large material-icons">flash_on</i>
+                        </h2>
+                        <h5 class="center">Visitas</h5>
+
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="large material-icons">group</i>
+                        </h2>
+                        <h5 class="center">Cotizaciones</h5>
+
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="large material-icons">group</i>
+                        </h2>
+                        <h5 class="center">Reportes</h5>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
-
+        <br><br>
+        <div class="section">
+        </div>
     </div>
 
+    <!--  Scripts-->
     <!--  Scripts-->
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Content/materialize-v0.97.5/js/materialize.js"></script>
     <script src="~/Scripts/jsProject/Functions.js"></script>
     <script src="~/Scripts/jsProject/CtrHome.js"></script>
 
-   
 
 </body>
 </html>
