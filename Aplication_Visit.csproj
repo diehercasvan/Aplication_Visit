@@ -137,6 +137,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jsProject\CtrHome.js" />
     <Content Include="Scripts\jsProject\CtrlEmployee.js" />
     <Content Include="Scripts\jsProject\CtrlLogin.js" />
     <Content Include="Scripts\jsProject\Functions.js" />

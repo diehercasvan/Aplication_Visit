@@ -12,7 +12,7 @@ const expressionEmail = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(
 $(document).ready(function () {
 
     //validateStorage();
-    validateUrl(document.URL);
+    //validateUrl(document.URL);
 
 })
 
@@ -30,11 +30,14 @@ function parar() {
 function validateStorage() {
     if (typeof (Storage) !== "undefined") {
       
-        if (!sessionStorage.getItem("session") === "TRUE") {
-            redirection();
+        if (sessionStorage.getItem("session") === "TRUE") {
+       
+            //loadDataUser(localStorage.getItem('dataUser'));
+            return true;
         } else {
             // GetStorage
-            loadDataUser(localStorage.getItem('dataUser'));
+            redirection();
+           
         }
        
     } else {
@@ -44,13 +47,15 @@ function validateStorage() {
 }
 //Function redirection  
 function redirection() {
+    sessionStorage.removeItem("dataUser");
     window.location.assign("/Login/Index");
 }
 //Function Get data user 
 function loadDataUser(dataUser) {
 
-    let retrievedObject = JSON.parse(dataUser);
-    console.log('retrievedObject: ', retrievedObject);
+    var dataUserObject = JSON.parse(dataUser);
+    console.log(dataUserObject);
+   
 }
 //Function no back button 
 
@@ -60,7 +65,16 @@ function nobackbutton() {
     window.onhashchange = function () { window.location.hash = "no-back-button"; }
 
 }
-function validateUrl(dataUrl) {
-    var n = dataUrl.search("W3Schoolso");
-    console.log(n);
+function validateSession(dataUrl) {
+  
+    let session = sessionStorage.getItem("session");
+    
+    if (dataUrl.search("Login") == -1 && session === "TRUE") {
+        loadDataUser(sessionStorage.getItem("dataUser"));
+        
+    } else {
+       redirection();
+    }
+    
+  
 }
