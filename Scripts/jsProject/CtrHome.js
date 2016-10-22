@@ -23,7 +23,7 @@ function loadDataUser(dataUser) {
     console.log(dataUserObject);
     $('#nameUser').text(dataUserObject.sEmp_name + " " + dataUserObject.sEmp_surname);
     $('#emailUser').text(dataUserObject.sEmp_mail);
-    $('#role').text("Rol: "+dataUserObject.iRol_id );
+    $('#role').text("Rol: " + dataUserObject.sRol_name);
     $('#phoneUser').text("Tel: " + dataUserObject.sEmp_phone);
     $('#phoneUser2').text("Tel2: " + dataUserObject.sEmp_phone2);
     $('#celUser').text("Cel: " + dataUserObject.sEmp_cell_phone);

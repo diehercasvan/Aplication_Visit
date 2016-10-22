@@ -68,10 +68,12 @@ namespace Aplication_Visit.Models
             {
 
                 var listEmployee = (from empl in ctx.EMPLOYEE
-                                    where empl.EMP_MAIL == emp.sEmp_mail && empl.EMP_PASSWORD == emp.sEmp_password
+                                    join rol in ctx.ROLE on empl.ROL_ID equals rol.ROL_ID
+                                    where empl.EMP_MAIL == emp.sEmp_mail && empl.EMP_PASSWORD == emp.sEmp_password && empl.EMP_STATE==true
                                     select new DtoEmployee()
                                     {
                                         iRol_id = (int)empl.ROL_ID,
+                                        sRol_name = rol.ROL_NAME,
                                         iBra_buis_id = (int)empl.BRA_BUIS_ID,
                                         sEmp_document = empl.EMP_DOCUMENT,
                                         sEmp_name = empl.EMP_NAME,
@@ -90,6 +92,34 @@ namespace Aplication_Visit.Models
             }
 
         }
+
+        public List<DtoEmployee> ResetPasswordEmployee(DtoEmployee emp)
+        {
+            Entities_Visit ctx;
+            using (ctx = new Entities_Visit())
+            {
+
+                var listEmployee = (from empl in ctx.EMPLOYEE
+                                    where empl.EMP_MAIL == emp.sEmp_mail && empl.EMP_STATE==true
+                                    select new DtoEmployee()
+                                    {
+
+
+                                        iEmp_id=empl.EMP_ID,
+                                        bemp_state = empl.EMP_STATE,
+                                        sEmp_name=empl.EMP_NAME,
+                                        sEmp_surname=empl.EMP_SURNAME,
+                                        sEmp_mail=empl.EMP_MAIL
+
+                                    }
+                                    ).ToList();
+
+                return listEmployee;
+            }
+
+        }
+
+    
 
 
     }

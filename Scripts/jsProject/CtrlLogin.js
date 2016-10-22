@@ -3,6 +3,7 @@
 Create :DIEGO CASALLAS
 Date :20/10/2016
 
+
 */
 //Variales
 
@@ -29,8 +30,11 @@ function sendLogin(model) {
         success: function (result) {
             
             if (result.length > 0) {
+               // console.log(result);
+               
                 let dataUser = {
                     iRol_id: result[0].iRol_id,
+                    sRol_name: result[0].sRol_name,
                     iBra_buis_id: result[0].iBra_buis_id,
                     sEmp_document: result[0].sEmp_document,
                     sEmp_name: result[0].sEmp_name,
@@ -45,7 +49,8 @@ function sendLogin(model) {
                 }
                 
                 localStorageLogin(dataUser);
-               // console.log(dataUser);
+                //console.log(dataUser);
+             
             }
             else {
                 alert("Error usuario o contraseña son  incorrectos");
@@ -64,6 +69,36 @@ function sendLogin(model) {
     return false;
 }
 
+
+//Send Reset password Login ajax C#
+function sendResetPassword(model) {
+
+    $.ajax({
+        url: '/Login/ResetPasswordEmployee',
+        cache: false,
+        type: 'POST',
+        data: model,
+        dataType: "json",
+        contentType: "application/json",
+        success: function (result) {
+   
+            console.log(result);
+            $('#textAnswerResetPassword').text(result);
+            clearTextBox();
+                
+
+        },
+        error: function (response) {
+            debugger;
+            alert(response.responseText);
+            
+
+        }
+
+    });
+
+    return false;
+}
 //Validate Text Login
 function validateLogin(e) {
 
@@ -99,31 +134,38 @@ function validateResetLogin(e) {
 
     let bValidate = true;
     var userReset = $('#ResetPassword').val();
+    var textAnswer = $('#textAnswerResetPassword').val();
 
-
+  
     if (!expressionEmail.test(userReset)) {
         bValidate = false;
     }
   
-    console.log(dataJson);
+ 
+
     if (bValidate) {
 
         let dataJson = {
             sEmp_mail: userReset,
 
         }
-        //sendLogin(JSON.stringify(dataJson));
+        console.log(dataJson);
+
+
+        sendResetPassword(JSON.stringify(dataJson));
     }
+
     else {
         alert("Verifique los datos ingresados ");
     }
 
-
+    debugger;
     e.preventDefault();
 }
 function clearTextBox() {
     $('#user').val("");
     $('#password').val("");
+    $('#ResetPassword').val("");
   
 }
 function localStorageLogin(data) {

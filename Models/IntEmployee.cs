@@ -20,5 +20,6 @@ namespace Aplication_Visit.Models
         Boolean deleteEmployee(DtoEmployee emp);
         //Method for login employee
         List<DtoEmployee> loginEmployee(DtoEmployee emp);
+        List<DtoEmployee> ResetPasswordEmployee(DtoEmployee emp);
     }
 }

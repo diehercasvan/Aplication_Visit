@@ -8,6 +8,8 @@ namespace Aplication_Visit.Controllers
     public class DtoEmployee
     {
         public int iRol_id { get; set; }
+        public int iEmp_id { get; set; }
+        public string sRol_name { get; set; }
         public int iBra_buis_id { get; set; }
         public string sEmp_document { get; set; }
         public string sEmp_name { get; set; }

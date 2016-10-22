@@ -10,6 +10,7 @@ namespace Aplication_Visit.Controllers
     public class LoginController : Controller
     {
         CtrlEmployee contEmployee = new CtrlEmployee();
+        CtrlNotification contNotification = null;
         // GET: Login
         public ActionResult Index()
         {
@@ -20,6 +21,30 @@ namespace Aplication_Visit.Controllers
         {
                 
             return Json(contEmployee.loginEmployee(emp), JsonRequestBehavior.AllowGet);
-        }  
+        }
+        public JsonResult ResetPasswordEmployee(DtoEmployee emp)
+        {
+            List<String> listResult = new List<String>();
+            String sResult = "";
+            
+            if (contEmployee.ResetPasswordEmployee(emp).Count > 0)
+            {
+                DtoEmployee objEmp = contEmployee.ResetPasswordEmployee(emp)[0];
+                contNotification = new CtrlNotification(objEmp,"Sinapsis", "Restore Password");
+                if (contNotification.SendMail())
+                {
+                    sResult = "Verifique su bandeja de correo ";
+                }
+                else {
+                    sResult = "Error: Al enviar el correo ";
+                }
+            }
+            else {
+
+                sResult = "Error: Cuenta de correo no encontrada";
+            }
+            listResult.Add(sResult);
+            return Json(listResult, JsonRequestBehavior.AllowGet);
+        }
     }
 }
