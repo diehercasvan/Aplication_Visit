@@ -1,4 +1,10 @@
-﻿$(document).ready(function () {
+﻿/*
+**********************************************
+Create :DIEGO CASALLAS
+Date :26/10/2016
+
+*/
+$(document).ready(function () {
     //$(".button-collapse").sideNav();
     //alert("Hola");
     _getList();

@@ -10,12 +10,10 @@ Date :20/10/2016
 var user;
 var password;
 
-//Star page
+//Start page
 $(document).ready(function () {
  
     $('.modal-trigger').leanModal();
-
-
 });
 //Send Login ajax C#
 function sendLogin(model) {
@@ -31,26 +29,7 @@ function sendLogin(model) {
             
             if (result.length > 0) {
                // console.log(result);
-               
-                let dataUser = {
-                    iRol_id: result[0].iRol_id,
-                    sRol_name: result[0].sRol_name,
-                    iBra_buis_id: result[0].iBra_buis_id,
-                    sEmp_document: result[0].sEmp_document,
-                    sEmp_name: result[0].sEmp_name,
-                    sEmp_surname: result[0].sEmp_surname,
-                    sEmp_phone: result[0].sEmp_phone,
-                    sEmp_phone2: result[0].sEmp_phone2,
-                    sEmp_cell_phone: result[0].sEmp_cell_phone,
-                    sEmp_cell_phone2: result[0].sEmp_cell_phone2,
-                    sEmp_mail: result[0].sEmp_mail,
-                    sEmp_mail2: result[0].sEmp_mail2,             
-
-                }
-                
-                localStorageLogin(dataUser);
-                //console.log(dataUser);
-             
+                StorageLogin(result[0]);
             }
             else {
                 alert("Error usuario o contraseña son  incorrectos");
@@ -68,8 +47,6 @@ function sendLogin(model) {
 
     return false;
 }
-
-
 //Send Reset password Login ajax C#
 function sendResetPassword(model) {
 
@@ -82,9 +59,11 @@ function sendResetPassword(model) {
         contentType: "application/json",
         success: function (result) {
    
-            console.log(result);
+           // console.log(result);
             $('#textAnswerResetPassword').text(result);
+            setTimeout(function () { redirection(); }, 5000);
             clearTextBox();
+
                 
 
         },
@@ -106,7 +85,6 @@ function validateLogin(e) {
      user=$('#user').val();
      password = $('#password').val();
 
-   
     if (!expressionEmail.test(user)) {
         bValidate = false;
     }
@@ -126,7 +104,6 @@ function validateLogin(e) {
         alert("Verifique los datos ingresados ");
     }
 
-    
     e.preventDefault();
 }
 //Validate Text Login
@@ -168,19 +145,6 @@ function clearTextBox() {
     $('#ResetPassword').val("");
   
 }
-function localStorageLogin(data) {
-    if (typeof (Storage) !== "undefined") {
-        // Code for localStorage/sessionStorage.
-        // Store
-        sessionStorage.setItem("dataUser", JSON.stringify(data));
-        sessionStorage.setItem("session", "TRUE");
-        clearTextBox();
-        window.location.assign("/Home/Index");
-        
-        
-    } else {
-        // Sorry! No Web Storage support..
-    }
-}
+
 
 

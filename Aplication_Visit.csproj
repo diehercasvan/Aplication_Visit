@@ -139,17 +139,30 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jsProject\CtrReports.js" />
+    <Content Include="Scripts\jsProject\CtrQuotes.js" />
+    <Content Include="Scripts\jsProject\CtrVisit.js" />
+    <Content Include="Scripts\jsProject\CtrClient.js" />
+    <Content Include="Scripts\jsProject\CtrEmployee.js" />
+    <Content Include="Scripts\jsProject\CtrBusinness.js" />
     <Content Include="Scripts\jsProject\CtrHome.js" />
     <Content Include="Scripts\jsProject\CtrlEmployee.js" />
     <Content Include="Scripts\jsProject\CtrlLogin.js" />
+    <Content Include="Scripts\jsProject\CtrlRestartPassword.js" />
     <Content Include="Scripts\jsProject\Functions.js" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BusinessController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NewPasswordController.cs" />
+    <Compile Include="Controllers\QuotesController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\VisitController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,6 +205,15 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\NewPassword\ChangePassword.cshtml" />
+    <Content Include="Views\Business\Business.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Employee\Employee.cshtml" />
+    <Content Include="Views\Client\Client.cshtml" />
+    <Content Include="Views\Visit\Visit.cshtml" />
+    <Content Include="Views\Quotes\Quotes.cshtml" />
+    <Content Include="Views\Reports\Reports.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

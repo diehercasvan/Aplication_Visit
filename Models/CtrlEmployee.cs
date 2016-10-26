@@ -119,7 +119,33 @@ namespace Aplication_Visit.Models
 
         }
 
-    
+        public List<DtoEmployee> UpdateEmployeePassword(DtoEmployee emp) {
+
+            Entities_Visit ctx;
+            using (ctx = new Entities_Visit()) {
+
+                var objEmployee = (from empl in ctx.EMPLOYEE
+                                   where empl.EMP_ID== emp.iEmp_id
+                                   select empl).FirstOrDefault();
+                objEmployee.EMP_PASSWORD = emp.sEmp_password;
+                ctx.SaveChanges();
+
+                var ListEmployee = (from empl in ctx.EMPLOYEE
+                                    where empl.EMP_PASSWORD==emp.sEmp_password
+                                    orderby empl.EMP_NAME
+                                    select new DtoEmployee()
+                                    {
+                                        
+                                        sEmp_name = empl.EMP_NAME,
+                                        sEmp_surname = empl.EMP_SURNAME,
+                                        
+                                    }).ToList();
+                return ListEmployee;
+
+            }
+
+               
+        }
 
 
     }

@@ -21,5 +21,6 @@ namespace Aplication_Visit.Models
         //Method for login employee
         List<DtoEmployee> loginEmployee(DtoEmployee emp);
         List<DtoEmployee> ResetPasswordEmployee(DtoEmployee emp);
+        List<DtoEmployee> UpdateEmployeePassword(DtoEmployee emp);
     }
 }

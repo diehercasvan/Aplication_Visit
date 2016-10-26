@@ -37,7 +37,7 @@ namespace Aplication_Visit.Models
            + "p{color: white;width: auto;margin: auto;text-align:center;}"
            + ".table {width:100%;margin:auto;text-align:left;}"
            + "</style ></head><body><header><img src='https://lh3.googleusercontent.com/-JLPZ5nn4o_Q/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK964MKeZVtQrNauy8X_BJUDegZZ0w/mo/photo.jpg?sz=120'>"
-           + "</header><section><table class='table'><caption><b>Señ@r :'" + sName + "'</b> </caption><tr><th>Ingrese al  siguiente link  para realizar  este procedimiento: </th></tr><tr><td><a href = 'http://materializecss.com/typography.html?data=" + sId + "'> Cambio de contraseña</a></td></tr></table></section><footer><p>Sinapsis Sof</p></footer></body></html>";
+           + "</header><section><table class='table'><caption><b>Señ@r :'" + sName + "'</b> </caption><tr><th>Ingrese al  siguiente link  para realizar  este procedimiento: </th></tr><tr><td><a href = 'http://localhost:1791/NewPassword/Index?data=" + sId + "'> Cambio de contraseña</a></td></tr></table></section><footer><p>Sinapsis Sof</p></footer></body></html>";
 
             return sHtmlMail;
         }

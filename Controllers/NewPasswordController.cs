@@ -1,30 +1,28 @@
-﻿using System;
+﻿using Aplication_Visit.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Aplication_Visit.Models;
 
 namespace Aplication_Visit.Controllers
 {
-    public class HomeController : Controller
+    public class NewPasswordController : Controller
     {
         CtrlEmployee contEmployee = new CtrlEmployee();
-        // GET: Home
+        // GET: NewPassword
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Home()
+        public ActionResult ChangePassword()
         {
             return View();
         }
-        // GET: List Employee
-        public JsonResult ListEmployee()
+        public JsonResult UpdatePasswordUser(DtoEmployee emp)
         {
 
-            return Json(contEmployee.listEmployee(), JsonRequestBehavior.AllowGet);
+            return Json(contEmployee.UpdateEmployeePassword(emp), JsonRequestBehavior.AllowGet);
         }
-        
     }
 }

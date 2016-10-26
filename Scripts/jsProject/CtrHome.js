@@ -1,4 +1,10 @@
-﻿$(document).ready(function () {
+﻿/*
+**********************************************
+Create :DIEGO CASALLAS
+Date :26/10/2016
+
+*/
+$(document).ready(function () {
 
 
     $('.button-collapse').sideNav();
@@ -10,9 +16,6 @@
     }
   );
     validateSession(document.URL);
-
-
-
 
 });
 
@@ -29,4 +32,9 @@ function loadDataUser(dataUser) {
     $('#celUser').text("Cel: " + dataUserObject.sEmp_cell_phone);
     $('#celUser2').text("Cel2: " + dataUserObject.sEmp_cell_phone2);
 
+}
+
+function selctView(selctView) {
+
+    window.location.assign("/" + selctView + "/" + selctView + "");
 }

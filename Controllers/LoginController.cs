@@ -1,4 +1,4 @@
-﻿using Aplication_Visit.Models;
+﻿    using Aplication_Visit.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,5 +46,6 @@ namespace Aplication_Visit.Controllers
             listResult.Add(sResult);
             return Json(listResult, JsonRequestBehavior.AllowGet);
         }
+       
     }
 }
